@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  runner:
+    image: myoung34/github-runner:latest
+    environment:
+      REPO_URL: https://github.com/ykawa/test-gha
+      ACCESS_TOKEN: ${ACCESS_TOKEN}
+      RUNNER_WORKDIR: /tmp/runner/work
+      LABELS: linux,x64
+    # SELinux システムでは docker コンテナが
+    # 他の docker コンテナを管理するのを許可するために必要
+    # security_opt:
+    #   - label:disable
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner:/tmp/runner'
+      # docker-in-docker では同じパスがホストとコンテナ内に必要
+      # docker の mgmt コマンドは docker の外側で走るがパスは内側を期待する
+
