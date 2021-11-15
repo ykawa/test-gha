@@ -1,7 +1,0 @@
-path-exclude=/usr/share/man/*
-path-exclude=/usr/share/locale/*/LC_MESSAGES/*.mo
-path-exclude=/var/lib/apt/lists/*debian*
-path-exclude=/var/cache/apt/*.bin
-path-exclude=/usr/share/doc/*
-path-include=/usr/share/doc/*/copyright
-path-include=/usr/share/doc/*/changelog.Debian.*
