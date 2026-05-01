@@ -6,8 +6,7 @@ on:
 
 jobs:
   pa:
-#     runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: FranzDiebold/github-env-vars-action@v2
       -
